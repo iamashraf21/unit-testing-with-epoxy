@@ -4,7 +4,7 @@ jobs:
   strategy:
     matrix:
       Python38:
-        python.version: '3.8.5'
+        python.version: '3'
 
   steps:
   - task: UsePythonVersion@0
