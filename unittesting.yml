@@ -4,8 +4,8 @@ trigger:
 - main
 
 pr:
-- develop
-- master
+- main
+
 steps:
 - task: UsePythonVersion@0
   displayName: ‘Manage Python Version’
@@ -28,17 +28,17 @@ steps:
  print(‘Found Django project in’, project_location)
  print(‘##vso[task.setvariable variable=projectRoot]{}’.format(project_location))
 - script: |
- pip install -r requirements.txt
- pip install unittest-xml-reporting
- displayName: ‘Install Python Prerequisites’
+   pip install -r requirements.txt
+   pip install unittest-xml-reporting
+   displayName: ‘Install Python Prerequisites’
 - script: |
- pip install pytest pytest-azurepipelines pytest-cov
- pytest -v — junitxml=junit/test-results.xml — cov — cov-report=xml — cov-report=html
- displayName: “Pytest Unit Test with Coverage”
- continueOnError: False
+   pip install pytest pytest-azurepipelines pytest-cov
+   pytest -v — junitxml=junit/test-results.xml — cov — cov-report=xml — cov-report=html
+   displayName: “Pytest Unit Test with Coverage”
+   continueOnError: False
 - task: PublishCodeCoverageResults@1
- displayName: ‘Publish Cobertura Coverage Report’
- inputs:
- codeCoverageTool: Cobertura
- summaryFileLocation: ‘$(System.DefaultWorkingDirectory)/**/coverage.xml’
- reportDirectory: ‘$(System.DefaultWorkingDirectory)/**/htmlcov’
+  displayName: ‘Publish Cobertura Coverage Report’
+  inputs:
+   codeCoverageTool: Cobertura
+   summaryFileLocation: ‘$(System.DefaultWorkingDirectory)/**/coverage.xml’
+   reportDirectory: ‘$(System.DefaultWorkingDirectory)/**/htmlcov’
