@@ -1,6 +1,6 @@
 jobs:
 - job: 'Test'
-  pool: MyLocalAgent  
+  pool: MyLocalAgent
   strategy:
     matrix:
       Python27:
@@ -10,26 +10,19 @@ jobs:
       Python36:
         python.version: '3.6'
 
+  steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(python.version)'
 
-trigger:
-- main
+  - script: |
+      pip install pytest pytest-azurepipelines
+      pip install pytest-cov
+      pytest --doctest-modules --junitxml=junit/test-results.xml --cov=. --cov-report=xml
+    displayName: 'pytest'
 
-pr:
-- main
-
-steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '$(python.version)'
-
-- script: |
-    pip install pytest pytest-azurepipelines
-    pip install pytest-cov
-    pytest --doctest-modules --junitxml=junit/test-results.xml --cov=. --cov-report=xml
-  displayName: 'pytest'
-
-- task: PublishTestResults@2
-  condition: succeededOrFailed()
-  inputs:
-    testResultsFiles: '**/test-*.xml'
-    testRunTitle: 'Publish test results for Python 3.8'
+  - task: PublishTestResults@2
+    condition: succeededOrFailed()
+    inputs:
+      testResultsFiles: '**/test-*.xml'
+      testRunTitle: 'Publish test results for Python 3.8'
