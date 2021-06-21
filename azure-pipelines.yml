@@ -26,4 +26,4 @@ jobs:
     inputs:
       testResultsFormat: 'JUnit'
       testResultsFiles: '**/test-*.xml'
-      testRunTitle: 'Publish test results for Python 3.8'
+      testRunTitle: 'Publish test results for Python $(python.version)'
