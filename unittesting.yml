@@ -4,8 +4,8 @@ trigger:
 - main
 
 pr:
-- develop
-- master
+- main
+
 steps:
 - task: UsePythonVersion@0
   displayName: ‘Manage Python Version’
