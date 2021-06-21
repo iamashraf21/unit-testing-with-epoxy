@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="4" failures="0" skipped="0" tests="4" time="0.509" timestamp="2021-06-21T12:13:53.249496" hostname="ubuntu-VirtualBox"><testcase classname="" name="startup" time="0.000"><error message="collection failure">startup.py:12: in &lt;module&gt;
-    from hello_app.webapp import app
-hello_app/__init__.py:1: in &lt;module&gt;
-    from flask import Flask  # Import the Flask class
-E   ModuleNotFoundError: No module named 'flask'</error></testcase><testcase classname="" name="hello_app.__init__" time="0.000"><error message="collection failure">hello_app/__init__.py:1: in &lt;module&gt;
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="3" failures="0" skipped="0" tests="3" time="0.420" timestamp="2021-06-21T12:27:45.441384" hostname="ubuntu-VirtualBox"><testcase classname="" name="hello_app.__init__" time="0.000"><error message="collection failure">hello_app/__init__.py:1: in &lt;module&gt;
     from flask import Flask  # Import the Flask class
 E   ModuleNotFoundError: No module named 'flask'</error></testcase><testcase classname="" name="hello_app.views" time="0.000"><error message="collection failure">/usr/lib/python3.8/importlib/__init__.py:127: in import_module
     return _bootstrap._gcd_import(name[level:], package, level)
