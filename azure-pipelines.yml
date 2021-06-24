@@ -18,6 +18,6 @@ jobs:
     displayName: 'pytest'
   - task: PublishTestResults@2
     inputs:
-      testResultsFormat: 'JUnit'
+      testResultsFormat: 'NUnit'
       testResultsFiles: '**/test-*.xml'
       testRunTitle: 'Publish test results for Python $(python.version)'
