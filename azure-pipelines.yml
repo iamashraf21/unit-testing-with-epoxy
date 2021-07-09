@@ -1,23 +1,8 @@
-jobs:
-- job: 'Test'
-  pool: MyLocalAgent
-  strategy:
-    matrix:
-      Python38:
-        python.version: '3.7'
+pool:
+  vmImage: 'ubuntu-18.04'
 
-  steps:
-  - task: UsePythonVersion@0
-    inputs:
-      versionSpec: '$(python.version)'
+container: ubuntu:18.04
 
-  - script: |
-      pip install pytest pytest-azurepipelines
-      pip install pytest-cov
-      pytest --doctest-modules --junitxml=junit/test-results.xml --cov=. --cov-report=xml
-    displayName: 'pytest'
-  - task: PublishTestResults@2
-    inputs:
-      testResultsFormat: 'NUnit'
-      testResultsFiles: '**/test-*.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+steps:
+- script: printenv
+
