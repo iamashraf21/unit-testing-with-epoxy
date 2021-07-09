@@ -3,5 +3,6 @@ pool: MyLocalPool
 container: ubuntu:latest
 
 steps:
-- script: printenv
+- script: ls
+  displayName: "Running script"
 
