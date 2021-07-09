@@ -1,7 +1,6 @@
-pool:
-  vmImage: 'ubuntu-18.04'
+pool: MyLocalPool
 
-container: ubuntu:18.04
+container: ubuntu:latest
 
 steps:
 - script: printenv
