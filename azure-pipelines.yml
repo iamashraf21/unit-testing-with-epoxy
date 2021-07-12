@@ -6,6 +6,6 @@ container:
 
 
 steps:
-- script: ls ../
+- script: pwd
   displayName: "Running script"
 
