@@ -6,6 +6,6 @@ container:
 
 
 steps:
-- script: arduino-cli core search samd
+- script: ls -l /dev/ttyACM0
   displayName: "Running script"
 
