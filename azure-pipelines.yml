@@ -6,6 +6,6 @@ container:
 
 
 steps:
-- script: pwd
+- script: arduino-cli core search samd
   displayName: "Running script"
 
