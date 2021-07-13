@@ -7,6 +7,7 @@ container:
 
 
 steps:
-- script: ls -l /dev/ttyACM0
+- script: ls
   displayName: "Running script"
+  workingDirectory: $(Build.SourcesDirectory)/ci
 
