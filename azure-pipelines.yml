@@ -3,6 +3,7 @@ pool: MyLocalPool
 container:
   image: myworkregistry007.azurecr.io/iot_repo:DigitalSigning532
   endpoint: myWorkRegistry007
+  options: -v /dev:/dev
 
 
 steps:
