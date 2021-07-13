@@ -9,5 +9,5 @@ container:
 steps:
 - script: ls
   displayName: "Running script"
-  workingDirectory: $(Build.SourcesDirectory)/ci
+  workingDirectory: $(Build.SourcesDirectory)
 
