@@ -13,14 +13,16 @@ resources:
 pool:
   vmImage: 'ubuntu-latest'
 
+#pool: MyLocalPool
+
 container:
   image: myworkregistry007.azurecr.io/build_repo:latest
   endpoint: myWorkRegistry007
-  #options: -v /dev:/dev --privileged
+  options: -v /dev:/dev --privileged
 
 steps:
 - checkout: AUnit
-- script: cp -r AUnit ~/home/docker/Arduino/libraries
+- script: cp -r AUnit /home/docker/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'AUnit checkout'
 
