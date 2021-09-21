@@ -10,7 +10,7 @@ resources:
     name: iamashraf21/custom_library
     
 
-pool: ubuntu-latest
+pool: ubuntu-18.04
 
 container:
   image: myworkregistry007.azurecr.io/build_repo:latest
