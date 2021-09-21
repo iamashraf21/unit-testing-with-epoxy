@@ -5,6 +5,7 @@ set -e
 # Enable the globstar shell option
 shopt -s globstar
 
+ls -l
 cd ../test
 
 #cd ~/Arduino/libraries
