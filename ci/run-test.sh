@@ -14,10 +14,14 @@ git clone https://github.com/bxparks/EpoxyDuino.git
 
 cd -
 
+pwd
+
 echo "APP_NAME := tests\
 ARDUINO_LIBS := AUnit\
 include ../../../EpoxyDuino/EpoxyDuino.mk\
 " > test.mk
+
+ls -l
 
 make
 
