@@ -21,7 +21,7 @@ container:
 steps:
 - checkout: AUnit
 #- script: cp -r AUnit ~/Arduino/libraries
-- script: ls -lRh /
+- script: ls -lRh /home/docker
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'AUnit checkout'
 
