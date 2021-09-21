@@ -22,7 +22,7 @@ container:
 
 steps:
 - checkout: AUnit
-- script: 'su - docker'
+- script: 'su docker'
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'moving to docker user'
 - script: whoami
