@@ -22,13 +22,16 @@ container:
 
 steps:
 - checkout: AUnit
+- script: ls -l /
+  workingDirectory: '$(Build.SourcesDirectory)/'
+  displayName: 'listing files'
 - script: cp -r AUnit /home/docker/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'AUnit checkout'
 
-- checkout: custom_library
+- checkout: self
 - script: ./run-test.sh
-  workingDirectory: '$(Build.SourcesDirectory)/custom_library/ci'
+  workingDirectory: '$(Build.SourcesDirectory)/unit-testing-with-epoxy/ci'
   displayName: 'Running the shell script in custom lib'
 
 - task: UniversalPackages@0
