@@ -1,32 +1,41 @@
-# Python/Flask Tutorial for Visual Studio Code
+micro-ecc
+==========
 
-* This sample contains the completed program from the tutorial, make sure to visit the link: [Using Flask in Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-flask). Intermediate steps are not included.
+A small and fast ECDH and ECDSA implementation for 8-bit, 32-bit, and 64-bit processors.
 
-* It also contains the *Dockerfile* and *uwsgi.ini* files necessary to build a container with a production server. The resulting image works both locally and when deployed to Azure App Service. See [Deploy Python using Docker containers](https://code.visualstudio.com/docs/python/tutorial-deploy-containers).
+The static version of micro-ecc (ie, where the curve was selected at compile-time) can be found in the "static" branch.
 
-* To run the app locally:
-  1. Run the command `cd hello_app`, to change into the folder that contains the Flask app.
-  1. Run the command `set FLASK_APP=webapp` (Windows cmd) or `FLASK_APP=webapp` (macOS/Linux) to point to the app module.
-  1. Start the Flask server with `flask run`.
+Features
+--------
 
-## The startup.py file
+ * Resistant to known side-channel attacks.
+ * Written in C, with optional GCC inline assembly for AVR, ARM and Thumb platforms.
+ * Supports 8, 32, and 64-bit architectures.
+ * Small code size.
+ * No dynamic memory allocation.
+ * Support for 5 standard curves: secp160r1, secp192r1, secp224r1, secp256r1, and secp256k1.
+ * BSD 2-clause license.
 
-In the root folder, the `startup.py` file is specifically for deploying to Azure App Service on Linux without using a containerized version of the app (that is, deploying the code directly, not as a container).
+Usage Notes
+-----------
+### Point Representation ###
+Compressed points are represented in the standard format as defined in http://www.secg.org/collateral/sec1_final.pdf; uncompressed points are represented in standard format, but without the `0x04` prefix. All functions except `uECC_compress()` only accept uncompressed points; use `uECC_compress()` and `uECC_decompress()` to convert between compressed and uncompressed point representations.
 
-Because the app code is in its own *module* in the `hello_app` folder (which has an `__init__.py`), trying to start the Gunicorn server within App Service on Linux produces an "Attempted relative import in non-package" error.
+Private keys are represented in the standard format.
 
-The `startup.py` file, therefore, is a shim to import the app object from the `hello_app` module, which then allows you to use startup:app in the Gunicorn command line (see `startup.txt`).
+### Using the Code ###
 
-## Contributing
+I recommend just copying (or symlink) the uECC files into your project. Then just `#include "uECC.h"` to use the micro-ecc functions.
 
-Contributions to the sample are welcome. When submitting changes, also consider submitting matching changes to the tutorial, the source file for which is [tutorial-flask.md](https://github.com/Microsoft/vscode-docs/blob/master/docs/python/tutorial-flask.md).
+For use with Arduino, you can use the Library Manager to download micro-ecc (**Sketch**=>**Include Library**=>**Manage Libraries**). You can then use uECC just like any other Arduino library (uECC should show up in the **Sketch**=>**Import Library** submenu).
 
-Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.microsoft.com.
+See uECC.h for documentation for each function.
 
-When you submit a pull request, a CLA-bot automatically determines whether you need to provide a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
+### Compilation Notes ###
 
-## Additional details
-
-* This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-* For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-* Contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+ * Should compile with any C/C++ compiler that supports stdint.h (this includes Visual Studio 2013).
+ * If you want to change the defaults for any of the uECC compile-time options (such as `uECC_OPTIMIZATION_LEVEL`), you must change them in your Makefile or similar so that uECC.c is compiled with the desired values (ie, compile uECC.c with `-DuECC_OPTIMIZATION_LEVEL=3` or whatever).
+ * When compiling for a Thumb-1 platform, you must use the `-fomit-frame-pointer` GCC option (this is enabled by default when compiling with `-O1` or higher).
+ * When compiling for an ARM/Thumb-2 platform with `uECC_OPTIMIZATION_LEVEL` >= 3, you must use the `-fomit-frame-pointer` GCC option (this is enabled by default when compiling with `-O1` or higher).
+ * When compiling for AVR, you must have optimizations enabled (compile with `-O1` or higher).
+ * When building for Windows, you will need to link in the `advapi32.lib` system library.
