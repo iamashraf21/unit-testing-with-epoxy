@@ -22,6 +22,9 @@ container:
 
 steps:
 - checkout: AUnit
+- script: 'su - docker'
+  workingDirectory: '$(Build.SourcesDirectory)/'
+  displayName: 'moving to docker user'
 - script: whoami
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'current user'
@@ -31,9 +34,9 @@ steps:
 - script: ls -lRh /home/docker
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'Listing files'
-#- script: cp -r AUnit /home/docker/Arduino/libraries
-#  workingDirectory: '$(Build.SourcesDirectory)/'
-#  displayName: 'AUnit checkout'
+- script: cp -r AUnit /home/docker/Arduino/libraries
+  workingDirectory: '$(Build.SourcesDirectory)/'
+  displayName: 'AUnit checkout'
 
 - checkout: self
 - script: ./run-test.sh
