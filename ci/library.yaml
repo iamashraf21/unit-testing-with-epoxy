@@ -22,7 +22,7 @@ container:
 
 steps:
 - checkout: AUnit
-- script: ls -l /
+- script: ls -lRh /
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'listing files'
 - script: cp -r AUnit /home/docker/Arduino/libraries
