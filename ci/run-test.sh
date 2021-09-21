@@ -7,11 +7,11 @@ shopt -s globstar
 
 cd ../test
 
-cd ~/Arduino/libraries
+#cd ~/Arduino/libraries
 
-git clone https://github.com/bxparks/EpoxyDuino.git
+#git clone https://github.com/bxparks/EpoxyDuino.git
 
-cd -
+#cd -
 
 echo "APP_NAME := tests\
 ARDUINO_LIBS := AUnit\
@@ -20,7 +20,7 @@ include ../../../EpoxyDuino/EpoxyDuino.mk\
 
 ./tests.out
 
-cd ../../AUnit/extras
-sleep 5
-python SerialRead.py
+#cd ../../AUnit/extras
+#sleep 5
+#python SerialRead.py
 
