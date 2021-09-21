@@ -8,16 +8,18 @@ shopt -s globstar
 ls -l
 cd ../test
 
-#cd ~/Arduino/libraries
+cd ~/Arduino/libraries
 
-#git clone https://github.com/bxparks/EpoxyDuino.git
+git clone https://github.com/bxparks/EpoxyDuino.git
 
-#cd -
+cd -
 
 echo "APP_NAME := tests\
 ARDUINO_LIBS := AUnit\
 include ../../../EpoxyDuino/EpoxyDuino.mk\
 " > test.mk
+
+make
 
 ./tests.out
 
