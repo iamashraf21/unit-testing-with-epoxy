@@ -22,9 +22,6 @@ container:
 
 steps:
 - checkout: AUnit
-- script: 'su docker'
-  workingDirectory: '$(Build.SourcesDirectory)/'
-  displayName: 'moving to docker user'
 - script: whoami
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'current user'
