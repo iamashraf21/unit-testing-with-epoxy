@@ -9,10 +9,9 @@ resources:
     endpoint: iamashraf21
     name: iamashraf21/custom_library
 
-jobs:    
-- job: Linux
-  pool:
-    vmImage: 'ubuntu-latest'
+
+pool:
+  vmImage: 'ubuntu-latest'
 
 container:
   image: myworkregistry007.azurecr.io/build_repo:latest
