@@ -5,11 +5,20 @@ set -e
 # Enable the globstar shell option
 shopt -s globstar
 
-
 cd ../test
 
-arduino-cli compile -b Moteino:samd:moteino_m0 -e
-arduino-cli upload -p /dev/ttyACM0 -b Moteino:samd:moteino_m0
+cd ~/Arduino/libraries
+
+git clone https://github.com/bxparks/EpoxyDuino.git
+
+cd -
+
+echo "APP_NAME := tests\
+ARDUINO_LIBS := AUnit\
+include ../../../EpoxyDuino/EpoxyDuino.mk\
+" > test.mk
+
+./tests.out
 
 cd ../../AUnit/extras
 sleep 5
