@@ -21,9 +21,9 @@ ls -l
 
 make
 
-./test.out
+./test.out > output.txt
 
-cd ~/Arduino/libraries/AUnit/extras
 sleep 5
+
 python SerialRead.py
 
