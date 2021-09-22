@@ -12,6 +12,9 @@ cd ~/Arduino/libraries
 
 git clone https://github.com/bxparks/EpoxyDuino.git
 
+echo "Listing library files"
+ls ~/Arduino/libraries
+
 cd -
 
 pwd
