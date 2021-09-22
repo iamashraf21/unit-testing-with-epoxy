@@ -5,22 +5,32 @@ set -e
 # Enable the globstar shell option
 shopt -s globstar
 
+ls -l
 cd ../test
 
 cd ~/Arduino/libraries
 
 git clone https://github.com/bxparks/EpoxyDuino.git
 
+echo "Listing library files"
+ls ~/Arduino/libraries
+
 cd -
 
-echo "APP_NAME := tests\
-ARDUINO_LIBS := AUnit\
-include ../../../EpoxyDuino/EpoxyDuino.mk\
-" > test.mk
+pwd
+
+echo "APP_NAME := tests \n\
+ARDUINO_LIBS := AUnit \n\
+include ~/Arduino/libraries/EpoxyDuino/EpoxyDuino.mk \n\
+" > Makefile
+
+ls -l
+
+make
 
 ./tests.out
 
-cd ../../AUnit/extras
-sleep 5
-python SerialRead.py
+#cd ../../AUnit/extras
+#sleep 5
+#python SerialRead.py
 
