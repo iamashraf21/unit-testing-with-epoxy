@@ -19,7 +19,7 @@ pwd
 echo "APP_NAME := tests\
 ARDUINO_LIBS := AUnit\
 include ../../../EpoxyDuino/EpoxyDuino.mk\
-" > test.mk
+" > Makefile
 
 ls -l
 
