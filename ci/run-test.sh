@@ -16,14 +16,7 @@ echo "Listing library files"
 ls ~/Arduino/libraries
 
 cd -
-
 pwd
-
-echo "APP_NAME := tests \n\
-ARDUINO_LIBS := AUnit \n\
-include ~/Arduino/libraries/EpoxyDuino/EpoxyDuino.mk \n\
-" > Makefile
-
 ls -l
 
 make
