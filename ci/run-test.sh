@@ -23,10 +23,11 @@ echo "Make is done"
 
 ls -l
 
-./test.out > output.txt
+./test.out
+#./test.out > output.txt
 
-sleep 5
-ls -l
-echo "going to exec SerialRead.py"
-python SerialRead.py
+#sleep 5
+#ls -l
+#echo "going to exec SerialRead.py"
+#python SerialRead.py
 
