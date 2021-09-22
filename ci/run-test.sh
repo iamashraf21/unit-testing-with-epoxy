@@ -24,6 +24,8 @@ echo "Make is done"
 ls -l
 
 ./test.out > output.txt
+
+sleep 5
 ls -l
 echo "going to exec SerialRead.py"
 python SerialRead.py
