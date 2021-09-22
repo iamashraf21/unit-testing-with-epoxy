@@ -31,6 +31,9 @@ steps:
 - script: ls -lRha /home/docker
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'Listing files'
+- script: mkdir /home/docker/Arduino/libraries
+  workingDirectory: '$(Build.SourcesDirectory)/'
+  displayName: 'Create Arduino Dir'
 - script: cp -r AUnit /home/docker/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'AUnit checkout'
