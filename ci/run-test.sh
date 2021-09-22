@@ -30,7 +30,7 @@ make
 
 ./tests.out
 
-#cd ../../AUnit/extras
-#sleep 5
-#python SerialRead.py
+cd ~/Arduino/libraries/AUnit/extras
+sleep 5
+python SerialRead.py
 
