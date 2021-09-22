@@ -21,7 +21,7 @@ ls -l
 
 make
 
-./tests.out
+./test.out
 
 cd ~/Arduino/libraries/AUnit/extras
 sleep 5
