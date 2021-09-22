@@ -28,7 +28,7 @@ steps:
 - script: 'cut -d: -f1 /etc/passwd'
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'users'
-- script: ls -lRh /home/docker
+- script: ls -lRh /
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'Listing files'
 - script: cp -r AUnit /home/docker/Arduino/libraries
