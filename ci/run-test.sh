@@ -25,7 +25,7 @@ ls -l
 
 ./test.out > output.txt
 
-sleep 5
+sleep 10
 ls -l
 echo "going to exec SerialRead.py"
 python SerialRead.py
