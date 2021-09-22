@@ -16,9 +16,9 @@ cd -
 
 pwd
 
-echo "APP_NAME := tests\
-ARDUINO_LIBS := AUnit\
-include ../../../EpoxyDuino/EpoxyDuino.mk\
+echo "APP_NAME := tests \n\
+ARDUINO_LIBS := AUnit \n\
+include ~/Arduino/libraries/EpoxyDuino/EpoxyDuino.mk \n\
 " > Makefile
 
 ls -l
