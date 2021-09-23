@@ -30,7 +30,7 @@ ls -l
 #cat /__w/_temp/1aca428c-4080-4752-a802-77aaea02e82d.sh
 
 echo "\ntestapp ran success"
-./test.out
+#./test.out
 #./test.out > output.txt
 
 #sleep 5
