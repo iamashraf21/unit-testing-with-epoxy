@@ -13,17 +13,21 @@ cd ~/Arduino/libraries
 git clone https://github.com/bxparks/EpoxyDuino.git
 
 echo "Listing library files"
-ls ~/Arduino/libraries
-
 cd -
-pwd
-ls -l
+make clean
 
+echo "make clean done"
 make
 
-./test.out
+echo "Make is done"
 
-cd ~/Arduino/libraries/AUnit/extras
-sleep 5
-python SerialRead.py
+ls -l
+
+./test.out
+#./test.out > output.txt
+
+#sleep 5
+#ls -l
+#echo "going to exec SerialRead.py"
+#python SerialRead.py
 

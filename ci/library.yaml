@@ -22,40 +22,22 @@ container:
 
 steps:
 - checkout: AUnit
-- script: whoami
-  workingDirectory: '$(Build.SourcesDirectory)/'
-  displayName: 'current user'
-- script: 'cut -d: -f1 /etc/passwd'
-  workingDirectory: '$(Build.SourcesDirectory)/'
-  displayName: 'users'
-- script: ls -lRha /home/docker
-  workingDirectory: '$(Build.SourcesDirectory)/'
-  displayName: 'Listing files'
 - script: mkdir /home/docker/Arduino/ && mkdir /home/docker/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
-  displayName: 'Create Arduino Dir'
+  displayName: 'Creating directories'
 - script: cp -r AUnit /home/docker/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
-  displayName: 'AUnit checkout'
+  displayName: 'Downloading the AUnit'
 
 - checkout: self
 - script: ./run-test.sh
   workingDirectory: '$(Build.SourcesDirectory)/unit-testing-with-epoxy/ci'
-  displayName: 'Running the shell script in custom lib'
+  displayName: 'Running the shell script for unit-test cases'
 
-- task: UniversalPackages@0
-  inputs:
-    command: 'publish'
-    publishDirectory: './custom_library'
-    feedsToUsePublish: 'internal'
-    vstsFeedPublish: 'c7e54f94-5edf-4148-8307-6fc152f42f8b/50aafe39-34db-4153-93fa-13522ecb0c89'
-    vstsFeedPackagePublish: 'custom_library'
-    versionOption: 'patch'
-  displayName: 'publishing the artifacts'
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
-    testResultsFiles: '$(Build.SourcesDirectory)/AUnit/extras/test-results.xml'
+    testResultsFiles: '$(Build.SourcesDirectory)/unit-testing-with-epoxy/test/test-results.xml'
     testRunTitle: 'Publish test results'
     failTaskOnFailedTests: true
 
