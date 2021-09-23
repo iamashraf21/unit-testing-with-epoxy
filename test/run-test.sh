@@ -23,6 +23,11 @@ echo "Make is done"
 
 ls -l
 
+g++ -o testcpp testcpp.cpp
+
+./testcpp
+
+echo "testapp ran success"
 #./test.out
 #./test.out > output.txt
 
