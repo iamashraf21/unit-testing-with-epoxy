@@ -18,7 +18,7 @@ pool:
 container:
   image: myworkregistry007.azurecr.io/epoxy_build_repo:latest
   endpoint: myWorkRegistry007
-  options: -v /dev:/dev --privileged
+  #options: -v /dev:/dev --privileged
 
 steps:
 - checkout: AUnit
