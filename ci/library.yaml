@@ -34,6 +34,9 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)/unit-testing-with-epoxy/ci'
   displayName: 'Running the shell script for unit-test cases'
 
+- script: python run-exe.py
+  workingDirectory: '$(Build.SourcesDirectory)/unit-testing-with-epoxy/ci'
+  displayName: 'Running the python script'
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
