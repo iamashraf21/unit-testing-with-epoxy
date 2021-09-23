@@ -22,10 +22,10 @@ container:
 
 steps:
 - checkout: AUnit
-- script: mkdir /home/docker/Arduino/ && mkdir /home/docker/Arduino/libraries
+- script: mkdir ~/Arduino/ && mkdir ~/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'Creating directories'
-- script: cp -r AUnit /home/docker/Arduino/libraries
+- script: cp -r AUnit ~/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'Downloading the AUnit'
 
