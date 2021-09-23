@@ -3,4 +3,4 @@
 
 APP_NAME := test
 ARDUINO_LIBS := AUnit
-include /home/docker/Arduino/libraries/EpoxyDuino/EpoxyDuino.mk
+include ~/Arduino/libraries/EpoxyDuino/EpoxyDuino.mk
