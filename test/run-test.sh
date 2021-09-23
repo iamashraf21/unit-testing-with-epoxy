@@ -23,9 +23,9 @@ echo "Make is done"
 
 ls -l
 
-g++ -o testcpp testcpp.cpp
+#g++ -o testcpp testcpp.cpp
 
-./testcpp
+#./testcpp
 
 #cat /__w/_temp/1aca428c-4080-4752-a802-77aaea02e82d.sh
 
