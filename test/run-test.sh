@@ -28,7 +28,7 @@ g++ -o testcpp testcpp.cpp
 ./testcpp
 
 echo "testapp ran success"
-#./test.out
+./test.out
 #./test.out > output.txt
 
 #sleep 5
