@@ -10,10 +10,10 @@ resources:
     name: iamashraf21/custom_library
 
 
-pool:
-  vmImage: 'ubuntu-latest'
+#pool:
+#  vmImage: 'ubuntu-latest'
 
-#pool: MyLocalPool
+pool: MyLocalPool
 
 container:
   image: myworkregistry007.azurecr.io/epoxy_build_repo:latest
