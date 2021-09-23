@@ -7,7 +7,6 @@ shopt -s globstar
 
 ls -l
 cd ../test
-sleep 1000
 cd ~/Arduino/libraries
 
 git clone https://github.com/bxparks/EpoxyDuino.git
@@ -18,7 +17,7 @@ make clean
 
 echo "make clean done"
 #make
-g++ -fpermissive -fprofile-arcs -ftest-coverage -O0 -DUNIT_TEST -DEPOXY_DUINO -I~/Arduino/libraries/EpoxyDuino/cores/epoxy -I~/Arduino/libraries/AUnit/src -x c++ *.ino ~/Arduino/libraries/EpoxyDuino/cores/epoxy/*.cpp ~/Arduino/libraries/AUnit/src/aunit/*.cpp -o"test.out"
+g++ -fpermissive -fprofile-arcs -ftest-coverage -O0 -DUNIT_TEST -DEPOXY_DUINO -I/home/ubuntu_azpcontainer/Arduino/libraries/EpoxyDuino/cores/epoxy -I/home/ubuntu_azpcontainer/Arduino/libraries/AUnit/src -x c++ *.ino /home/ubuntu_azpcontainer/Arduino/libraries/EpoxyDuino/cores/epoxy/*.cpp /home/ubuntu_azpcontainer/Arduino/libraries/AUnit/src/aunit/*.cpp -o"test.out"
 
 echo "Make is done"
 whoami
