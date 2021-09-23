@@ -18,7 +18,7 @@ make clean
 
 echo "make clean done"
 #make
-g++ -fpermissive -fprofile-arcs -ftest-coverage -O0 -DUNIT_TEST -DEPOXY_DUINO -I~/Arduino/libraries/EpoxyDuino/cores/epoxy -I~/Arduino/libraries/AUnit/src *.cpp -x c++ *.ino ~/Arduino/libraries/EpoxyDuino/cores/epoxy/*.cpp ~/Arduino/libraries/AUnit/src/aunit/*.cpp -o"test.out
+g++ -fpermissive -fprofile-arcs -ftest-coverage -O0 -DUNIT_TEST -DEPOXY_DUINO -I~/Arduino/libraries/EpoxyDuino/cores/epoxy -I~/Arduino/libraries/AUnit/src *.cpp -x c++ *.ino ~/Arduino/libraries/EpoxyDuino/cores/epoxy/*.cpp ~/Arduino/libraries/AUnit/src/aunit/*.cpp -o"test.out"
 
 echo "Make is done"
 whoami
