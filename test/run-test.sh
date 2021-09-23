@@ -22,7 +22,7 @@ make
 echo "Make is done"
 whoami
 
-gdb test.out
+./test.out 
 
 PID=$!
 # Wait for 2 seconds
@@ -30,17 +30,7 @@ sleep 5
 # Kill it
 kill $PID
 
-ls -l
-
-#g++ -o testcpp testcpp.cpp
-
-#./testcpp
-
-#cat /__w/_temp/1aca428c-4080-4752-a802-77aaea02e82d.sh
-
-echo "md5sum value ---"
-#./test.out
-./test.out > output.txt
+#./test.out > output.txt
 
 sleep 10
 #ls -l
