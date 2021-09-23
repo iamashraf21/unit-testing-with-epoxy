@@ -31,11 +31,11 @@ steps:
 
 - checkout: self
 - script: ./run-test.sh
-  workingDirectory: '$(Build.SourcesDirectory)/unit-testing-with-epoxy/ci'
+  workingDirectory: '$(Build.SourcesDirectory)/unit-testing-with-epoxy/test'
   displayName: 'Running the shell script for unit-test cases'
 
 - script: python run-exe.py
-  workingDirectory: '$(Build.SourcesDirectory)/unit-testing-with-epoxy/ci'
+  workingDirectory: '$(Build.SourcesDirectory)/unit-testing-with-epoxy/test'
   displayName: 'Running the python script'
 - task: PublishTestResults@2
   inputs:
