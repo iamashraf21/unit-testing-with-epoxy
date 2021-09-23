@@ -32,10 +32,10 @@ ls -l
 echo "md5sum value ---"
 md5sum test.out
 #./test.out
-./test.out > output.txt
+#./test.out > output.txt
 
-sleep 5
-ls -l
-echo "going to exec SerialRead.py"
-python SerialRead.py
+sleep 600
+#ls -l
+#echo "going to exec SerialRead.py"
+#python SerialRead.py
 
