@@ -2,7 +2,7 @@ import os
 import shutil
 
 
-os.system('./test.out')
+#os.system('./test.out')
 os.system('ls -l')
 os.system('echo "test.out ran succes"')
 os.system('./test.out > output.txt')
