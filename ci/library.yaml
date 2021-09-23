@@ -18,7 +18,7 @@ pool: MyLocalPool
 container:
   image: myworkregistry007.azurecr.io/epoxy_build_repo:latest
   endpoint: myWorkRegistry007
-  options: --cap-add=SYS_PTRACE -a STDIN -a STDOUT
+  options: -i --cap-add=SYS_PTRACE -a STDIN 
 
 steps:
 - checkout: AUnit
