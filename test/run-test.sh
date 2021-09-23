@@ -31,9 +31,8 @@ ls -l
 #cat /__w/_temp/1aca428c-4080-4752-a802-77aaea02e82d.sh
 
 echo "md5sum value ---"
-md5sum test.out
-./test.out
-#./test.out > output.txt
+#./test.out
+./test.out > output.txt
 
 sleep 10
 #ls -l
