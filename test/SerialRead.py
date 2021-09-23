@@ -34,7 +34,7 @@ def main():
 	#print ("timeout starts.......")
 	
 	#opening the serial port
-	ser = serial.Serial('output.txt', 'rb') 
+	ser = open('output.txt', 'rb') 
 	f1 = open('test-results.xml', 'w+')
 	f2 = open('test.log','w+')
 
