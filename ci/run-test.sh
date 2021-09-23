@@ -23,7 +23,7 @@ echo "Make is done"
 
 ls -l
 
-./test.out
+#./test.out
 #./test.out > output.txt
 
 #sleep 5
