@@ -22,17 +22,11 @@ make
 echo "Make is done"
 whoami
 
-./test.out 
-
-PID=$!
-# Wait for 2 seconds
-sleep 5
-# Kill it
-kill $PID
+#./test.out 
 
 #./test.out > output.txt
 
-sleep 10
+#sleep 10
 #ls -l
 #echo "going to exec SerialRead.py"
 #python SerialRead.py
