@@ -18,6 +18,7 @@ make clean
 
 echo "make clean done"
 make
+whoami
 
 echo "Make is done"
 
@@ -31,10 +32,10 @@ ls -l
 
 echo "md5sum value ---"
 md5sum test.out
-#./test.out
+./test.out
 #./test.out > output.txt
 
-sleep 600
+sleep 10
 #ls -l
 #echo "going to exec SerialRead.py"
 #python SerialRead.py
