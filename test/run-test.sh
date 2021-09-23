@@ -18,9 +18,19 @@ make clean
 
 echo "make clean done"
 make
-whoami
 
 echo "Make is done"
+whoami
+
+sudo apt-get install gdb
+
+gdb test.out
+
+PID=$!
+# Wait for 2 seconds
+sleep 5
+# Kill it
+kill $PID
 
 ls -l
 
