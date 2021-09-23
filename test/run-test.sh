@@ -22,8 +22,6 @@ make
 echo "Make is done"
 whoami
 
-sudo apt-get install gdb
-
 gdb test.out
 
 PID=$!
