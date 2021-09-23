@@ -7,7 +7,7 @@ shopt -s globstar
 
 ls -l
 cd ../test
-
+sleep 1000
 cd ~/Arduino/libraries
 
 git clone https://github.com/bxparks/EpoxyDuino.git
