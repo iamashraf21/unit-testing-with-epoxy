@@ -22,12 +22,12 @@ g++ -fpermissive -fprofile-arcs -ftest-coverage -O0 -DUNIT_TEST -DEPOXY_DUINO -I
 echo "Make is done"
 whoami
 
-#./test.out 
+./test.out 
 
-#./test.out > output.txt
+./test.out > output.txt
 
-#sleep 10
-#ls -l
-#echo "going to exec SerialRead.py"
-#python SerialRead.py
+sleep 5
+ls -l
+echo "going to exec SerialRead.py"
+python SerialRead.py
 
