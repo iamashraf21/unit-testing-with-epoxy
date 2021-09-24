@@ -4,6 +4,10 @@ resources:
     type: github
     endpoint: iamashraf21
     name: iamashraf21/AUnit
+  - repository: EpoxyDuino
+    type: github
+    endpoint: iamashraf21
+    name: iamashraf21/EpoxyDuino
   - repository: custom_library
     type: github
     endpoint: iamashraf21
