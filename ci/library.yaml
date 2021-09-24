@@ -26,12 +26,16 @@ container:
 
 steps:
 - checkout: AUnit
+- checkout: EpoxyDuino
 - script: mkdir ~/Arduino/ && mkdir ~/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'Creating directories'
 - script: cp -r AUnit ~/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'Downloading the AUnit'
+- script: cp -r EpoxyDuino ~/Arduino/libraries
+  workingDirectory: '$(Build.SourcesDirectory)/'
+  displayName: 'Downloading the EpoxyDuino'
 
 - checkout: self
 - script: ./run-test.sh
