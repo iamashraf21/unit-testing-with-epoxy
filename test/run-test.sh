@@ -7,12 +7,12 @@ shopt -s globstar
 
 ls -l
 cd ../test
-cd ~/Arduino/libraries
+#cd ~/Arduino/libraries
 
-git clone https://github.com/bxparks/EpoxyDuino.git
+#git clone https://github.com/bxparks/EpoxyDuino.git
 
 echo "Listing library files"
-cd -
+#cd -
 make clean
 
 echo "make clean done"
