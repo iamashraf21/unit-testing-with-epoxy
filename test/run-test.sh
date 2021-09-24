@@ -22,9 +22,9 @@ g++ -fpermissive -fprofile-arcs -ftest-coverage -O0 -DUNIT_TEST -DEPOXY_DUINO -I
 echo "Make is done"
 whoami
 
-./test.out 
+#./test.out 
 
-./test.out > output.txt
+./test.out > output.txt </dev/null
 
 sleep 5
 ls -l
