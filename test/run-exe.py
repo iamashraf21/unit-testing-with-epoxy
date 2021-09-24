@@ -2,11 +2,11 @@ import os
 import shutil
 
 
-os.system('./test.out')
+#os.system('./test.out')
 #os.system('printenv')
 os.system('echo "test.out ran succes"')
-#os.system('./test.out > output.txt')
+os.system('./test.out > output.txt')
 #os.system('sleep 7')
-#os.system('ls -l')
-#os.system('cat output.txt')
-#os.system('python SerialRead.py')
+os.system('ls -l')
+os.system('cat output.txt')
+os.system('python SerialRead.py')
